@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Barbería</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Agendar Citas</a></li>
+                <li><a id="logout-btn">Cerrar Sesión</a></li>
+
+<script>
+    document.getElementById("logout-btn").addEventListener("click", () => {
+        sessionStorage.removeItem("loggedIn");
+        window.location.href = "login.html";
+    });
+</script>
+        </nav>
+        <h1>Panel de Administración</h1>
+        <p>Gestión de citas agendadas</p>
+    </header>
+    <main>
+      <section id="appointments" class="appointments-container">
+        <h2>Citas Agendadas</h2>
+        <ul id="admin-appointment-list" class="appointment-list"></ul>
+    </section>
+    
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database-compat.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+      // Verificar si el usuario tiene acceso
+      function verifyAccess() {
+          const loggedIn = sessionStorage.getItem("loggedIn");
+          if (!loggedIn || loggedIn !== "true") {
+              window.location.href = "login.html";
+          }
+      }
+  
+      // Ejecutar verificación
+      document.addEventListener("DOMContentLoaded", verifyAccess);
+  </script>
+</body>
+</html>

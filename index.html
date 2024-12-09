@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HollyWood - Agendar Citas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Agendar Citas</a></li>
+                <li><a href="admin.html">Administración</a></li>
+            </ul>
+        </nav>
+        <h1>HollyWood BarberShop</h1>
+        <p>¡Reserva tu cita fácilmente!</p>
+    </header>
+    <main>
+
+      <div id="error-message" style="color: #ff5a5a; margin-bottom: 1rem; display: none;"></div>
+
+        <form id="appointment-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+            
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="date">Fecha:</label>
+            <input type="text" id="date" required>
+            
+            <label for="time">Hora:</label>
+            <select id="time" required></select>
+            
+            <label for="barber">Barbero:</label>
+            <select id="barber" required>
+                <option value="Yery">Yery</option>
+                <option value="Ricky">Ricky</option>
+            </select>
+            
+            <button type="submit">Agendar Cita</button>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database-compat.js"></script>    
+    <script src="scripts.js"></script>
+</body>
+</html>
